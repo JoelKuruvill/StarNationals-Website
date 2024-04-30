@@ -15,33 +15,36 @@
   background-color: rgb(255, 255, 255);
   padding: 1px 10vh;
   margin: 0;
-  /* justify-content: center; */
   font-size: calc(10px + 1vmin);
 }
 
-.App-header nav p {
-  display: inline-block;
-  margin: 1%;
-}
-
-/* The hero image */
+/* The hero image - from W3C */
 .hero-image {
-/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15)), url("Star\ Nationals\ Inc\ Logo\ 2016.jpg");
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("./Star\ Nationals\ Inc\ Official\ Logo\ 2016.png");
 
-/* Set a specific height */
-height: 70vh;
-width: 100%;
-margin: 0;
-padding: 0;
+  /* Set a specific height */
+  height: 72vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
-/* Position and center the image to scale nicely on all screens */
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* Place text in the middle of the image */
 .hero-text {
   margin: 1% 0;
+}
+
+main .col-lg-4 {
+  padding: 2% 8%;
+}
+
+.heading-img {
+  object-fit: cover;
+  border-radius: 20%;
 }
