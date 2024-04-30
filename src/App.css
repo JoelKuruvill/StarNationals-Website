@@ -3,36 +3,45 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
+  margin: 1% 0 0 0;
+  width: fit-content;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  border: 1px solid black;
+  border-radius: 20%;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  padding: 1px 10vh;
+  margin: 0;
+  /* justify-content: center; */
+  font-size: calc(10px + 1vmin);
 }
 
-.App-link {
-  color: #61dafb;
+.App-header nav p {
+  display: inline-block;
+  margin: 1%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* The hero image */
+.hero-image {
+/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15)), url("Star\ Nationals\ Inc\ Logo\ 2016.jpg");
+
+/* Set a specific height */
+height: 70vh;
+width: 100%;
+margin: 0;
+padding: 0;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  margin: 1% 0;
 }
