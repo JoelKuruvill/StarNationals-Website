@@ -1,0 +1,36 @@
+/*
+Navigation Bar Component
+Created: 2024-MAY-1
+*/
+#NavHome:hover {
+    background-color: aliceblue;
+}
+#navLogo {
+    width: 120px;
+    height: auto;
+    object-fit: fill;
+    margin: 1%;
+}
+
+.main-nav {
+    width: 50%;
+    margin: 1vh 2%;
+}
+.main-nav ul {
+    margin: 1vh 2%;
+    width: 100%;
+}
+.main-nav li {
+    margin: 1vh 2%;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+}  
+.main-nav a:hover {
+    color: #00a8ff;
+}
+.main-nav a.active {
+    text-decoration: underline;
+    color: steelblue;
+} 

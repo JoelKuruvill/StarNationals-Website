@@ -4,7 +4,7 @@ Created: 2024-APR-29
 */
 export function Footer() {
     return (
-        <footer class="container pt-5">
+        <footer class="footer container pt-5">
             <div class="row">
             <div class="col mb-3">
                 <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">

@@ -21,7 +21,7 @@
 /* The hero image - from W3C */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("./pages/assets/Star\ Nationals\ Inc\ Official\ Logo\ 2016.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("./assets/Star\ Nationals\ Inc\ Official\ Logo\ 2016.png");
 
   /* Set a specific height */
   height: 72vh;

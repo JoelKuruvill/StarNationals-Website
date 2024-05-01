@@ -2,9 +2,9 @@
 Navigation Bar Component
 Created: 2024-MAY-1
 */
-import h1 from '../pages/assets/Gaming - Minecraft (4-25-2020).png';
-import h2 from '../pages/assets/My Photography (5-10-2020).jpg';
-import h3 from '../pages/assets/Teal Futuristic Technology Facebook Cover.png';
+import h1 from '../assets/Gaming - Minecraft (4-25-2020).png';
+import h2 from '../assets/My Photography (5-10-2020).jpg';
+import h3 from '../assets/Teal Futuristic Technology Facebook Cover.png';
 
 export default function Homepage() {
     return(
