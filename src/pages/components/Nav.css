@@ -1,0 +1,13 @@
+/*
+Navigation Bar Component
+Created: 2024-MAY-1
+*/
+#NavHome:hover {
+    background-color: aliceblue;
+}
+#navLogo {
+    width: 100px;
+    height: auto;
+    object-fit: fill;
+    margin: 1%;
+}
