@@ -8,9 +8,8 @@ import h3 from '../assets/Teal Futuristic Technology Facebook Cover.png';
 
 export default function Homepage() {
     return(
-        <>
+      <main class="row">
         <div class="hero-image">{/* Homepage Main image */}</div>
-        <main class="row">
         <div class="col-lg-4">
           <img src={h1} width={140} height={140} className='heading-img'></img>
           <h2 class="fw-normal">Gaming</h2>
@@ -30,6 +29,5 @@ export default function Homepage() {
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div>
       </main>
-      </>
     );
 }

@@ -3,7 +3,7 @@ Navigation Bar Component
 Created: 2024-APR-29
 */
 import logo from '../assets/Star Nationals Inc Logo 2016.jpg';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Nav.css';
 
 export function Nav() {
@@ -34,8 +34,12 @@ export function Nav() {
         </nav>
 
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">Login</button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
+          <button type="button" class="btn btn-outline-primary me-2" disabled>
+            <Link to="/login" class="nav-link px-2">Login</Link>
+          </button>
+          <button type="button" class="btn btn-primary" disabled>
+            <Link to="/register" class="nav-link px-2">Sign up</Link>
+          </button>
         </div>
       </header>
     );

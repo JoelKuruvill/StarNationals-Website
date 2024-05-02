@@ -2,4 +2,12 @@
 About Us Page
 Created: 2024-APR-29
 */
-//TBD.
+export default function Projects() {
+    // if (true) {
+        return (
+            <div>
+                TBD.
+            </div>
+        );
+
+}

@@ -2,4 +2,11 @@
 About Us Page
 Created: 2024-May-1
 */
-//TBD.
+export default function ErrorPage() {
+    // if (true) {
+        return (
+            <div>
+                404 Error Page.
+            </div>
+        );
+}
