@@ -12,6 +12,7 @@ Created: 2024-MAY-1
     margin: 1%;
 }
 
+/*Page Navigation Col*/
 .main-nav {
     width: 50%;
     margin: 1vh 2%;
@@ -33,4 +34,19 @@ Created: 2024-MAY-1
 .main-nav a.active {
     text-decoration: underline;
     color: steelblue;
-} 
+}
+
+/*Login and Registration Col*/
+.user-auth {
+    padding: 1px;
+    width: 25%;
+}
+.user-auth button {
+    margin: 2%;
+}
+
+@media screen and (max-width: 1024px) {
+    .user-auth {
+        width: 100%;
+    }
+}

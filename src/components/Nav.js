@@ -8,7 +8,7 @@ import './Nav.css';
 
 export function Nav() {
     return (
-      <header class="App-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 m-3 mb-4 border-bottom"> 
+      <header class="App-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 m-3 border-bottom"> 
         <div class="col-md-2 mb-2 mb-md-0" id='NavHome'>
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
             <img src={logo} id="navLogo"/>
@@ -33,7 +33,7 @@ export function Nav() {
           </ul>
         </nav>
 
-        <div class="col-md-3 text-end">
+        <div class="user-auth">
           <button type="button" class="btn btn-outline-primary me-2" disabled>
             <Link to="/login" class="nav-link px-2">Login</Link>
           </button>
