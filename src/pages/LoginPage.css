@@ -1,27 +1,64 @@
 /*
-About Us Page
+Login Page CSS
 Created: 2024-MAY-2
 */
 #loginPageBG {
     background-image: url("../assets/kelly-sikkema-rwVSwdGN3o8-unsplash.jpg");
-    height: 100vh;
+    height: auto;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    padding: 4%;
+    z-index: 0;
 }
 
+/* Login Form Styling */
 #loginPageUI {
     position: relative;
-    top: 45%;
-    width: 50%;
+    top: 8vh;
+    bottom: 35vh;
+    width: 30%;
     height: fit-content;
-    overflow: auto;
-    left: 25%;
-    left: 25%;
-    margin: 0;
-    padding: 0;
-    background-color: wheat;
-    border-radius: 25% 30%;
+    left: 35%;
+    left: 35%;
+    margin: 2vh 0 10vh 0;
+    padding: 2vh 2%;
+    background-color: whitesmoke;
+    border-radius: 2%;
+    z-index: 1;
+}
+#loginPageUI input {
+    width: 70%;
+    padding: 1vh;
+    margin: 2vh;
+}
+
+@media screen and (max-width: 1024px) {
+    #loginPageBG {
+        padding: 2%;
+    }
+    #loginPageUI {
+        width: 40%;
+        left: 30%;
+        left: 30%;
+    }
+    #loginPageUI input {
+        width: 80%;
+        padding: 1vh;
+        margin: 1vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #loginPageUI {
+        width: 80%;
+        height: fit-content;
+        left: 10%;
+        left: 10%;
+    }
+    #loginPageUI input {
+        width: 90%;
+    }
 }

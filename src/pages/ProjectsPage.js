@@ -1,5 +1,5 @@
 /*
-About Us Page
+Project Page
 Created: 2024-APR-29
 */
 export default function Projects() {
