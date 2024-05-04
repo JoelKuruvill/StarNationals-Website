@@ -34,10 +34,10 @@ export function Nav() {
         </nav>
 
         <div class="user-auth">
-          <button type="button" class="btn btn-outline-primary me-2" disabled>
+          <button type="button" class="btn btn-outline-primary me-2">
             <Link to="/login" class="nav-link px-2">Login</Link>
           </button>
-          <button type="button" class="btn btn-primary" disabled>
+          <button type="button" class="btn btn-primary">
             <Link to="/register" class="nav-link px-2">Sign up</Link>
           </button>
         </div>

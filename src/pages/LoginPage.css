@@ -10,14 +10,14 @@ Created: 2024-MAY-2
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
-    padding: 4%;
+    padding: 7vh 4%;
     z-index: 0;
 }
 
 /* Login Form Styling */
 #loginPageUI {
     position: relative;
-    top: 8vh;
+    top: 3em;
     bottom: 35vh;
     width: 30%;
     height: fit-content;
@@ -35,9 +35,13 @@ Created: 2024-MAY-2
     margin: 2vh;
 }
 
+#loginPageUI #submit {
+    width: 50%;
+}
+
 @media screen and (max-width: 1024px) {
     #loginPageBG {
-        padding: 2%;
+        padding: 5vh 4%;
     }
     #loginPageUI {
         width: 40%;
@@ -51,14 +55,11 @@ Created: 2024-MAY-2
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     #loginPageUI {
-        width: 80%;
-        height: fit-content;
-        left: 10%;
-        left: 10%;
-    }
-    #loginPageUI input {
-        width: 90%;
+        width: 70%;
+        top: 2em;
+        left: 15%;
+        left: 15%;
     }
 }

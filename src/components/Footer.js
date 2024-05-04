@@ -2,6 +2,9 @@
 Footer Component
 Created: 2024-APR-29
 */
+import { Link, NavLink } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css'; /* https://stackoverflow.com/questions/42522233/react-fontawesome-not-displaying-icons */
+
 export function Footer() {
     return (
         <footer class="footer container pt-5">
@@ -15,17 +18,25 @@ export function Footer() {
             <div class="col-6 col-md-2 mb-3">
                 <h5>Section</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Projects</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    <li class="nav-item mb-2">
+                        <Link to="/projects" class="nav-link p-0 text-body-secondary">Projects</Link>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <Link to="/faq" class="nav-link p-0 text-body-secondary">FAQs</Link>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <Link to="/about" class="nav-link p-0 text-body-secondary">About Us</Link>
+                    </li>
                 </ul>
             </div>
 
             <div class="col-6 col-md-2 mb-3">
                 <h5>Portfolio</h5>
                 <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/" class="nav-link p-0 text-body-secondary">Portfolio Home</a></li>
-                <li class="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/My_Coding.html" class="nav-link p-0 text-body-secondary">Portfolio</a></li>
+                <li class="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/" class="nav-link p-0 text-body-secondary"
+                 target='_blank'>Portfolio Home  <i className="fa fa-external-link" /></a></li>
+                <li class="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/My_Coding.html" class="nav-link p-0 text-body-secondary"
+                 target='_blank'>Portfolio <i className="fa fa-external-link" /></a></li>
                 </ul>
             </div>
             <div class="col-md-5 offset-md-1 mb-3">
