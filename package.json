@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start:frontend": "react-scripts start",
-    "start:backend": "node src/server/index.js",
+    "start:backend": "cd src/server && node index.js",
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -6,19 +6,6 @@ import banner from '../assets/Star Nationals Inc Official Logo 2016.png';
 import './AboutUsPage.css';
 
 export default function AboutUs() {
-    const fetchData = async () => {
-        try {
-          const response = await fetch('/api/jobs'); // Replace '/api/jobs' with your backend endpoint
-          if (!response.ok) {
-            throw new Error('Failed to fetch data');
-          }
-          const data = await response.json();
-          setJobs(data);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
-    
     return (
         <div className='AboutUsPageContent'>
             <div className='pageCompanyHeading'>
@@ -51,9 +38,6 @@ export default function AboutUs() {
                 </p>
             </div>
             <div>
-            {jobs.map((job, index) => (
-        <JobItem key={index} job={job} />
-      ))}
                 <h4> Careers </h4> <br />
                 <table>
                     <tr>

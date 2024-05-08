@@ -6,18 +6,18 @@ const mongoose = require("mongoose");
 const mainURI = process.env.MONGODB_URI;
 const jovianURI = process.env.JOVIAN_URI;
 
-mongoose.connect(mainURI)
-  .then(() => {
-    console.log("CONNECTED to main server");
-  })
-  .catch((err) => {
-    console.error("ERROR:", err);
-  });
+try {
+  const mainDB = mongoose.connect(mainURI);
+  console.log("CONNECTED to main server");
+}
+catch (err) {
+  console.error("ERROR:", err);
+}
 
-mongoose.connect(jovianURI)
-  .then(() => {
-    console.log("CONNECTED to Jovian project server");
-  })
-  .catch((err) => {
-    console.error("ERROR:", err);
-  });
+try {
+  const jovianDB = mongoose.createConnection(jovianURI);
+  console.log("CONNECTED to Jovian project server");
+}
+catch (err) {
+  console.error("ERROR:", err);
+}

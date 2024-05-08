@@ -4,7 +4,6 @@ Created: 2024-May-7
 */
 // Code below from: https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
 const express = require("express");
-const mongoose = require('mongoose');
 const dotenv = require("dotenv").config();
 const database = require("./model/database");
 
