@@ -10,8 +10,9 @@ import './ErrorsPage.css';
 export default function ErrorPage() {
     // if (true) {
         return (
-            <div>
-                <h1>404 Error Page.</h1>
+            <div className='ErrorsPage'>
+                <h4><u>404 Error</u><br/>The page you are looking for cannot be found or does not exist</h4>
+                <hr/>
                 <img className="ErrorPageBG" src={bg} width={100} height={100}></img>
             </div>
         );

@@ -3,7 +3,8 @@ Footer Component
 Created: 2024-APR-29
 */
 import { Link, NavLink } from 'react-router-dom';
-import 'font-awesome/css/font-awesome.min.css'; /* https://stackoverflow.com/questions/42522233/react-fontawesome-not-displaying-icons */
+import "./Footer.css";
+//import 'font-awesome/css/font-awesome.min.css'; /* https://stackoverflow.com/questions/42522233/react-fontawesome-not-displaying-icons */
 
 export function Footer() {
     return (

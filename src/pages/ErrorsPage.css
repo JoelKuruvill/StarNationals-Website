@@ -5,4 +5,14 @@ Created: 2024-May-3
 .ErrorPageBG {
     height: 50%;
     width: 100px;
+    margin-bottom: 5%;
+}
+.ErrorsPage h4 {
+    font-weight: lighter;
+    margin: 2vh 12%;
+}
+
+.ErrorsPage hr {
+    width: 50%;
+    margin: 4vh auto;
 }

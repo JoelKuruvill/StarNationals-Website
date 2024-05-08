@@ -2,4 +2,44 @@
 About Us Page CSS
 Created: 2024-May-3
 */
-/* TBD. */
+
+.pageCompanyHeading {
+    background-color: whitesmoke;
+    padding: 1%;
+    margin: 0;
+}
+
+.pageCompanyHeading hr {
+    width: 25%;
+    color: black;
+    margin: 2% auto;
+}
+
+#pageCompanyLogo {
+    width: 20%;
+    margin: 1px;
+}
+
+.AboutUsPageContent h4 {
+    margin: 2% auto 1px auto;
+    padding: 0;
+}
+
+.AboutUsPageContent p {
+    margin: 2vh 19%;
+    font-size: larger;
+}
+
+.AboutUsPageContent ul li {
+    font-size: larger;
+    list-style: none;
+    width: 100%;
+    margin: 1vh 1px;
+}
+
+.AboutUsPageContent table {
+    margin: 1px 30% 2vh 30%;
+    background-color: antiquewhite;
+    width: 40%;
+    border: 1px solid black;
+}
