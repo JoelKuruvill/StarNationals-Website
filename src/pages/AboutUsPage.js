@@ -2,19 +2,40 @@
 About Us Page
 Created: 2024-APR-29
 */
+import { useState, useEffect } from 'react';
+import axios from "axios";
+
 import banner from '../assets/Star Nationals Inc Official Logo 2016.png';
 import './AboutUsPage.css';
 
 export default function AboutUs() {
+    const [jobs, setJobs] = useState([]);
+
+    useEffect(() => {
+      axios.get('/job')
+        .then(response => {
+            if (response.data[0]) {
+                setJobs(response.data);
+            } else {
+                setJobs()
+            }
+        })
+        .catch(error => {
+          console.error('Error fetching data: ', error);
+        });
+    }, []); //runs only once.
+
     return (
         <div className='AboutUsPageContent'>
             <div className='pageCompanyHeading'>
-                <h2>Welcome from</h2>
-                <h3> STAR NATIONALS INC. </h3> <hr />
-                <img src={banner} id="pageCompanyLogo" width={140}></img>
+                <div className='pageCompanyHeadingText'>
+                    <h2>Welcome from</h2>
+                    <h3> STAR NATIONALS INC. </h3> <hr />
+                </div>
+                {/* <img src={banner} id="pageCompanyLogo" width={140} alt='Official Star Nationals Logo 2016'></img> */}
             </div>
             <br />
-            <div>
+            <div className='WhoWeAre'>
                 <h4> Who We Are </h4> <br />
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et malesuada magna. Duis suscipit ante egestas massa consequat, non pharetra nibh rutrum. Integer tincidunt odio eget nunc sollicitudin consequat. Nam eget placerat felis, sit amet ultrices nibh. Nullam vel odio vitae metus scelerisque pellentesque. Aliquam ac magna quis velit aliquam dapibus bibendum at lacus. Suspendisse potenti.
@@ -39,25 +60,31 @@ export default function AboutUs() {
             </div>
             <div>
                 <h4> Careers </h4> <br />
-                <table>
-                    <tr>
+                <table className='careersTable'>
+                <th>Job Opennings</th>
                         <th>
-                            Test1
+                            Location
                         </th>
                         <th>
-                            Test3
+                            Salary
                         </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Test2
-                        </td>
-                        <td>
-                            Test4
-                        </td>
-                    </tr>
+                        <th>Apply Link</th>
+                {jobs.length > 0 ? jobs.map(job => (    
+                    <tr key={job._id}>
+                            <td>{job.title}</td>
+                            <td>{job.location}</td>
+                            <td>{job.salary}</td>
+                            <td>
+                            <a href={"https://jovian-careers-website-v2-14w3.onrender.com/job/" + job._id} target='_blank'>
+                                Apply now! <i className="fa fa-external-link" /></a>
+                            </td>
+                        </tr>
+                )) : <div>No Job Opennings at this time. Check again later! </div>}
                 </table>
-                <p> Links above redirect to smaller project I worked on related to a Caerrs page :) </p>
+                <p> Data above redirect to smaller project I worked on related to a <a
+                 href='https://jovian-careers-website-v2-14w3.onrender.com/' target='_blank'>
+                    careers website <i className="fa fa-external-link" /></a>.</p>
+
             </div>
         </div>
     );
