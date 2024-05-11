@@ -18,3 +18,13 @@ https://www.youtube.com/watch?v=hZUNMYU4Kzo
 
 Deployments split between static site and web service for frontend and backend respective:
 - https://community.render.com/t/trying-to-deploy-full-stack-web-app-on-render-any-tips/7935/3
+
+https://stackoverflow.com/questions/3302959/how-to-restart-a-node-js-server
+# Debugging:
+https://stackoverflow.com/questions/71842510/mongoose-query-always-returns-empty-array
+
+https://www.youtube.com/watch?v=ACUXjXtG8J4
+https://www.mongodb.com/docs/drivers/node/current/quick-start/connect-to-mongodb/
+https://stackoverflow.com/questions/40844297/what-is-difference-between-axios-and-fetch
+https://stackoverflow.com/questions/58519950/how-can-show-no-data-available-message-if-there-will-be-not-data-available-in
+https://www.youtube.com/watch?v=51JCCLjImnA

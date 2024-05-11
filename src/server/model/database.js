@@ -5,7 +5,7 @@ Created: 2024-May-7
 import dotenv from "dotenv";
 import { MongoClient } from "mongodb";
 
-import model from "./model.js";
+// import model from "./model.js";
 
 dotenv.config();
 
