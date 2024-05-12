@@ -70,15 +70,16 @@ export default function AboutUs() {
             <div>
                 <h4> Careers </h4> <br />
                 <table className='careersTable'>
-                    <th>Job Opennings</th>
-                    <th>
-                        Location
-                    </th>
-                    <th>
-                        Salary
-                    </th>
-                    <th>Apply Link</th>
-                    {console.log(jobs)}
+                    <tr>
+                        <th>Job Opennings</th>
+                        <th>
+                            Location
+                        </th>
+                        <th>
+                            Salary
+                        </th>
+                        <th>Apply Link</th>
+                    </tr>
                     {jobs.includes("DB ERROR" || "UH OH") ? <div>{jobs}</div> : jobs.length > 0 ? jobs.map(job => (
                         <tr key={job._id}>
                             <td>{job.title}</td>
