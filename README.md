@@ -39,3 +39,6 @@ The project API can be accessed here: https://starnationals-website-api.onrender
 - Application Navigation error with going back or reloading page error
     - https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually
     - https://stackoverflow.com/questions/44063229/react-router-not-showing-browser-history
+- [React and DOM](https://stackoverflow.com/questions/59924585/im-getting-an-error-using-react-invalid-dom-property-for-did-you-mean-htm)
+- [Static Site Routing Issues Resoluion](https://docs.render.com/deploy-create-react-app)
+    - https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually

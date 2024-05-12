@@ -10,27 +10,33 @@ import './AboutUsPage.css';
 
 export default function AboutUs() {
     const [jobs, setJobs] = useState([]);
+    const [jobsTableMessage, setJobsTableMessage] = useState("Unknown Error Encountered in Loading Table Contents.");
+    const [jobsTableLoading, setJobsTableLoading] = useState(true);
 
     useEffect(() => {
         axios.get("/").then(() => {
             axios.get('/jobs')
                 .then(response => {
-                    if (response.data[0]) {
+                    if (response.data.length > 0) {
                         console.log("Data accessed");
+                        setJobsTableLoading(false);
                         setJobs(response.data);
                     } else {
                         console.log("No data returned, no opennings?");
-                        setJobs("UH OH:\nNo Job Opennings at this time. Check again later!");
+                        setJobsTableLoading(false);
+                        setJobsTableMessage("UH OH:\nNo Job Opennings at this time. Check again later!");
                     }
                 })
                 .catch(error => {
                     console.log('Error fetching data: ', error);
-                    setJobs("DB ERROR:\nError accessing database. Please try again later");
+                    setJobsTableLoading(false);
+                    setJobsTableMessage("DB ERROR:\nError accessing database. Please try again later");
                 })
         })
             .catch((error) => {
                 console.log('Error fetching data: ', error);
-                setJobs("DB ERROR:\nError connecting to database. Please try again later");
+                setJobsTableLoading(false);
+                setJobsTableMessage("DB ERROR:\nError connecting to database. Please try again later");
             })
     }, []); //runs only once.
 
@@ -83,18 +89,22 @@ export default function AboutUs() {
                         </tr>
                     </thead>
                     <tbody>
-                    {jobs.includes("DB ERROR" || "UH OH") ? <tr>{jobs}</tr> : jobs.length > 0 ? jobs.map(job => (
-                        <tr key={job._id}>
-                            <td>{job.title}</td>
-                            <td>{job.location}</td>
-                            <td>{job.salary}</td>
-                            <td>
-                                <a href={"https://jovian-careers-website-v2-14w3.onrender.com/job/" + job._id}
-                                    target='_blank'
-                                    rel="noreferrer">Apply now! <i className="fa fa-external-link" /></a>
-                            </td>
-                        </tr>)) : <tr>{jobs}</tr>}
-                        </tbody>
+                        {console.log(jobs + " | " + jobsTableMessage)}
+                        {jobsTableLoading ? <tr>TABLE CONTENTS CONNECTING AND LOADING</tr> : false}
+                        {jobsTableMessage.includes("DB ERROR" || "UH OH") ? <tr>{jobsTableMessage}</tr> : (Array.isArray(jobs) &&
+                         jobs.length > 0) ?
+                             jobs.map(job => (
+                                <tr key={job._id}>
+                                    <td>{job.title}</td>
+                                    <td>{job.location}</td>
+                                    <td>{job.salary}</td>
+                                    <td>
+                                        <a href={"https://jovian-careers-website-v2-14w3.onrender.com/job/" + job._id}
+                                            target='_blank'
+                                            rel="noreferrer">Apply now! <i className="fa fa-external-link" /></a>
+                                    </td>
+                                </tr>)) : <div>{jobsTableMessage}</div> }
+                    </tbody>
                 </table>
                 <p> Data above redirect to smaller project I worked on related to a <a
                     href='https://jovian-careers-website-v2-14w3.onrender.com/' target='_blank' rel="noreferrer">

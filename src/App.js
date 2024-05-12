@@ -1,10 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 
 import { Nav } from './components/Nav'; //Component Imports
 import { Footer } from './components/Footer';

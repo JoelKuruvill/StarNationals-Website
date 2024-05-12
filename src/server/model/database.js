@@ -42,11 +42,11 @@ async function loadJobs(idValue) {
   
   let jobsList = []; //Variable to be returned with res.
   if (idValue !== undefined) {
-    jobsList = await jobsCollection.find({_id: idValue}).toArray(); //For specific job ID
+    jobsList = jobsCollection.find({ _id: idValue }); //For specific job ID
   } else {
-    jobsList = await jobsCollection.find({}).toArray(); //For all jobs
+    jobsList = jobsCollection.find({}); //For all jobs
   }
-  return jobsList;
+  return jobsList.toArray();
 }
 
 export default {
