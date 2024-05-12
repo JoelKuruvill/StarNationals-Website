@@ -13,7 +13,7 @@ export default function ErrorPage() {
             <div className='ErrorsPage'>
                 <h4><u>404 Error</u><br/>The page you are looking for cannot be found or does not exist</h4>
                 <hr/>
-                <img className="ErrorPageBG" src={bg} width={100} height={100}></img>
+                <img className="ErrorPageBG" src={bg} width={100} height={100} alt='Error Bage Icon'></img>
             </div>
         );
 }

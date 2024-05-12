@@ -11,7 +11,7 @@ export function Nav() {
       <header class="App-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 m-3 border-bottom"> 
         <div class="col-md-2 mb-2 mb-md-0" id='NavHome'>
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-            <img src={logo} id="navLogo"/>
+            <img src={logo} id="navLogo" alt='Star Nationals Official Logo'/>
             <p><b>Star Nationals</b><br/>A Company!</p>
           </a>
         </div>

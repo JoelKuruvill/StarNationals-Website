@@ -35,12 +35,17 @@ async function jovianDB() {
   }
 }
 
-async function loadJobs() {
+async function loadJobs(idValue) {
   const client = new MongoClient(jovianURI);
   const database = client.db("DB-Web-App");
   const jobsCollection = database.collection("webAppJobs");
-  const jobsList = await jobsCollection.find({}).toArray();
-  // console.log(jobsList);
+  
+  let jobsList; //Variable to be returned with res.
+  if (idValue !== undefined) {
+    jobsList = await jobsCollection.find({_id: idValue}).toArray(); //For specific job ID
+  } else {
+    jobsList = await jobsCollection.find({}).toArray(); //For all jobs
+  }
   return jobsList;
 }
 

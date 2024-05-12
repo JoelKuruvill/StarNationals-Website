@@ -2,7 +2,7 @@
 Footer Component
 Created: 2024-APR-29
 */
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Footer.css";
 //import 'font-awesome/css/font-awesome.min.css'; /* https://stackoverflow.com/questions/42522233/react-fontawesome-not-displaying-icons */
 
@@ -35,9 +35,9 @@ export function Footer() {
                 <h5>Portfolio</h5>
                 <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/" class="nav-link p-0 text-body-secondary"
-                 target='_blank'>Portfolio Home  <i className="fa fa-external-link" /></a></li>
+                 target='_blank' rel="noopener">Portfolio Home  <i className="fa fa-external-link" /></a></li>
                 <li class="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/My_Coding.html" class="nav-link p-0 text-body-secondary"
-                 target='_blank'>Portfolio <i className="fa fa-external-link" /></a></li>
+                 target='_blank' rel="noopener">Portfolio <i className="fa fa-external-link" /></a></li>
                 </ul>
             </div>
             <div class="col-md-5 offset-md-1 mb-3">
