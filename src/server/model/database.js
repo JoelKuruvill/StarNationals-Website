@@ -40,7 +40,7 @@ async function loadJobs(idValue) {
   const database = client.db("DB-Web-App");
   const jobsCollection = database.collection("webAppJobs");
   
-  let jobsList; //Variable to be returned with res.
+  let jobsList = []; //Variable to be returned with res.
   if (idValue !== undefined) {
     jobsList = await jobsCollection.find({_id: idValue}).toArray(); //For specific job ID
   } else {

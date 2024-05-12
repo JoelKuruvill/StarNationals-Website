@@ -1,6 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom'
 
 import { Nav } from './components/Nav'; //Component Imports
 import { Footer } from './components/Footer';
@@ -15,16 +19,16 @@ import Register from './pages/SignUpPage';
 function App() {
   return (
     <div className="App">
-      <Nav></Nav>
-      <Routes>
+        <Nav></Nav>
+        <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<ErrorPage />} />
-       </Routes>
-      <Footer></Footer>
+        </Routes>
+        <Footer></Footer>
     </div>
   );
 }

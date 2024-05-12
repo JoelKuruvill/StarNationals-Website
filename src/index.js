@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +12,7 @@ root.render(
       {/* https://www.w3schools.com/icons/fontawesome_icons_intro.asp */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     </head>
-    <Router history={createBrowserHistory}>
+    <Router>
       <App />
     </Router>
   </React.StrictMode>

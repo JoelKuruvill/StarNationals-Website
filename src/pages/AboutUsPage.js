@@ -70,17 +70,20 @@ export default function AboutUs() {
             <div>
                 <h4> Careers </h4> <br />
                 <table className='careersTable'>
-                    <tr>
-                        <th>Job Opennings</th>
-                        <th>
-                            Location
-                        </th>
-                        <th>
-                            Salary
-                        </th>
-                        <th>Apply Link</th>
-                    </tr>
-                    {jobs.includes("DB ERROR" || "UH OH") ? <div>{jobs}</div> : jobs.length > 0 ? jobs.map(job => (
+                    <thead>
+                        <tr>
+                            <th>Job Opennings</th>
+                            <th>
+                                Location
+                            </th>
+                            <th>
+                                Salary
+                            </th>
+                            <th>Apply Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {jobs.includes("DB ERROR" || "UH OH") ? <tr>{jobs}</tr> : jobs.length > 0 ? jobs.map(job => (
                         <tr key={job._id}>
                             <td>{job.title}</td>
                             <td>{job.location}</td>
@@ -90,7 +93,8 @@ export default function AboutUs() {
                                     target='_blank'
                                     rel="noreferrer">Apply now! <i className="fa fa-external-link" /></a>
                             </td>
-                        </tr>)) : <div>{jobs}</div>}
+                        </tr>)) : <tr>{jobs}</tr>}
+                        </tbody>
                 </table>
                 <p> Data above redirect to smaller project I worked on related to a <a
                     href='https://jovian-careers-website-v2-14w3.onrender.com/' target='_blank' rel="noreferrer">
