@@ -3,6 +3,8 @@ Footer Component
 Created: 2024-APR-29
 */
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 import "./Footer.css";
 //import 'font-awesome/css/font-awesome.min.css'; /* https://stackoverflow.com/questions/42522233/react-fontawesome-not-displaying-icons */
 
@@ -23,10 +25,10 @@ export function Footer() {
                         <Link to="/projects" className="nav-link p-0 text-body-secondary">Projects</Link>
                     </li>
                     <li className="nav-item mb-2">
-                        <Link to="/faq" className="nav-link p-0 text-body-secondary">FAQs</Link>
+                        <Link to="/about" className="nav-link p-0 text-body-secondary">About Us</Link>
                     </li>
                     <li className="nav-item mb-2">
-                        <Link to="/about" className="nav-link p-0 text-body-secondary">About Us</Link>
+                        <HashLink smooth to='/about#careers' className="nav-link p-0 text-body-secondary"> Careers </HashLink>
                     </li>
                 </ul>
             </div>
@@ -35,9 +37,9 @@ export function Footer() {
                 <h5>Portfolio</h5>
                 <ul className="nav flex-column">
                 <li className="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/" className="nav-link p-0 text-body-secondary"
-                 target='_blank' rel="noopener">Portfolio Home  <i className="fa fa-external-link" /></a></li>
+                 target='_blank' rel="noreferrer">Portfolio Home  <i className="fa fa-external-link" /></a></li>
                 <li className="nav-item mb-2"><a href="https://web.cs.dal.ca/~kuruvilla/My_Coding.html" className="nav-link p-0 text-body-secondary"
-                 target='_blank' rel="noopener">Portfolio <i className="fa fa-external-link" /></a></li>
+                 target='_blank' rel="noreferrer">Portfolio <i className="fa fa-external-link" /></a></li>
                 </ul>
             </div>
             <div className="col-md-5 offset-md-1 mb-3">

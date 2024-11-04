@@ -1,6 +1,6 @@
 # Star Nationals Official Website
 Created: 2024-MAR-24 \
-Updated: 2024-MAY-12 \
+Updated: 2024-Nov-04 \
 ~ \
 This is a ReatJS project of a pseudonym startup company called Star Nationals.
  This project incorporates various full stack functionalities such as login & registration and dynamic
@@ -8,11 +8,17 @@ This is a ReatJS project of a pseudonym startup company called Star Nationals.
 
 ----
 
-The project is deployed and accessed here: https://starnationals-website.onrender.com/ \
-The project API can be accessed here: https://starnationals-website-api.onrender.com
+The project is deployed and accessed here: https://starnationals-website.onrender.com/
 
 ----
 
+# References
+- https://www.w3schools.com/react/react_forms.asp
+- https://stackoverflow.com/questions/58525269/jump-to-a-specific-section-in-a-page-react
+
+
+
+# Original README Below
 **To run this project locally**, download project as zip file or using Git and open this project using a cmd line pointed at projects root directory. Run 'npm start' and both frontend and backends should run on ports 3000 and 3001 respectively.
 
 # Development Logs and Resources:
@@ -42,3 +48,6 @@ The project API can be accessed here: https://starnationals-website-api.onrender
 - [React and DOM](https://stackoverflow.com/questions/59924585/im-getting-an-error-using-react-invalid-dom-property-for-did-you-mean-htm)
 - [Static Site Routing Issues Resoluion](https://docs.render.com/deploy-create-react-app)
     - https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually
+
+https://stackoverflow.com/questions/50286927/i-am-getting-error-in-console-you-need-to-enable-javascript-to-run-this-app-r
+https://dev.to/collegewap/how-to-set-the-document-title-in-react-54g6

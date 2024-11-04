@@ -10,10 +10,11 @@ import './AboutUsPage.css';
 
 export default function AboutUs() {
     const [jobs, setJobs] = useState([]);
-    const [jobsTableMessage, setJobsTableMessage] = useState("Unknown Error Encountered in Loading Table Contents.");
+    const [jobsTableMessage, setJobsTableMessage] = useState("");
     const [jobsTableLoading, setJobsTableLoading] = useState(true);
 
     useEffect(() => {
+        document.title = "About Star Nationals";
         axios.get("/").then(() => {
             axios.get('/jobs')
                 .then(response => {
@@ -73,7 +74,7 @@ export default function AboutUs() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut dictum diam, eget auctor ex. Sed at lacus ullamcorper, cursus dui vel, convallis lectus. Phasellus elementum diam at eros vehicula luctus at vitae neque. Morbi aliquam viverra nibh, ac tincidunt massa mollis sit amet. Vestibulum sodales est et elit congue varius. In interdum pharetra diam. Cras dictum dui ut erat tristique, eget faucibus ex scelerisque. Nulla felis ligula, sodales sit amet est finibus, euismod vehicula.
                 </p>
             </div>
-            <div>
+            <div id='careers'>
                 <h4> Careers </h4> <br />
                 <table className='careersTable'>
                     <thead>
