@@ -38,6 +38,10 @@ Created: 2024-MAY-3
     clear: both;
 }
 
+/* input:invalid {
+    border: 0.15em solid red;
+} */
+
 #signUpPageUI #submit {
     width: 50%;
 }

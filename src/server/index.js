@@ -6,6 +6,7 @@ Created: 2024-May-7
 //  https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import db from "./model/database.js";
 
@@ -14,6 +15,7 @@ const app = express();
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("<h2>Welcome!</h2> This site is the Star Nationals website API. To head back to our website <a href='https://starnationals-website.onrender.com'>click here</a>.");
@@ -41,7 +43,67 @@ app.get('/jobs/:id', async (req, res) => {
 });
 // End of Jovian Project API endpoints.
 
+//Registration
+app.get(`/users`, async (req, res) => {
+    try {
+        res.json(await db.loadUsers());
+    }
+    catch (error) {
+        res.status(500);
+    }
+});
+app.post(`/addUser`, async (req, res) => {
+    const newUser = {
+        _id: req.body.userName,
+        userName: req.body.userName,
+        email: req.body.userEmail,
+        password: req.body.userPassword,
+    };
+    const data = await db.registerUser(newUser);
+    try {
+        await client.connect();
+    
+        // calling the db and the collection
+        const db = client.db("User_Management");
+        const collection = db.collection("Signup");
+    
+        const addUser = await collection.insertOne(data);
+    
+        res.status(200).json(data);
+        await client.close();
+        return addUser;
+      } 
+      catch (error) {
+        return error;
+      }
+});
 
+//Login
+app.post(`/login`, async (req, res) => {
+    try {
+        const validateUser = {
+          email: req.body.userEmail,
+        };
+    console.log(validateUser)
+        const data = await db.loginUser(validateUser);
+    
+        if (!data) {
+          res.status(400).json({ message: "User not found" });
+          return;
+        }
+    
+        // const isPasswordValid = await bcrypt.compare(req.body.password, data.password);
+    
+        // if (!isPasswordValid) {
+        //   res.status(401).json({ message: "Invalid Password" });
+        //   return;
+        // }
+    
+        res.status(200).json(data);
+      } catch (error) {
+        res.status(500).json(error);
+      }
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

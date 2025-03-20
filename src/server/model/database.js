@@ -48,9 +48,62 @@ async function loadJobs(idValue) {
   }
   return jobsList.toArray();
 }
+async function loadUsers(idValue) {
+  const client = new MongoClient(mainURI);
+  const database = client.db("userData");
+  const usersCollection = database.collection("userData_Credentials");
+  
+  let usersList = []; //Variable to be returned with res.
+  if (idValue !== undefined) {
+    usersList = usersCollection.find({ _id: idValue }); //For specific job ID
+  } else {
+    usersList = usersCollection.find({}); //For all jobs
+  }
+  return usersList.toArray();
+}
+
+async function registerUser(data) {
+    try {
+      const client = new MongoClient(mainURI);
+      await client.connect();
+  
+      // calling the db and the collection
+      const db = client.db("userData");
+      const collection = db.collection("userData_Credentials");
+  
+      const addUser = await collection.insertOne(data);
+      await client.close();  
+      return addUser;
+
+    } catch (error) {
+      return error;
+    }
+};
+
+const loginUser = async (data) => {
+  try {
+    const client = new MongoClient(mainURI);
+    await client.connect();
+
+    // calling the db and the collection
+    const db = client.db("userData");
+    const collection = db.collection("userData_Credentials");
+
+    const user = await collection.findOne(data);
+    console.log(user)
+    await client.close();
+
+    return user;
+  } catch (error) {
+    return error;
+  }
+};
 
 export default {
   mainDB,
   jovianDB,
-  loadJobs
+  loadJobs,
+  loadUsers,
+  registerUser,
+  loginUser
 };
