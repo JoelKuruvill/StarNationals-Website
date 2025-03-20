@@ -7,7 +7,7 @@ Photo by <a href="https://unsplash.com/@kellysikkema?utm_content=creditCopyText&
 import "./LoginPage.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from "axios";
+import { loginUser } from '../api.js'
 
 export default function Login() {
     const [userEmail, setEmail] = useState("");
@@ -17,36 +17,9 @@ export default function Login() {
 
     useEffect(() => {
         document.title = "Login | Star Nationals";
-    });
-
-    const loginUser = async (data) => {
-        try {
-          //const hashedPassword = await bcrypt.hash(data.password, 10);
-      
-          const requestData = {
-            ...data
-          };
-          const res = await axios.post(`http://localhost:3001/login`, requestData);
-          console.log(res.data)
-          if (data.response === undefined){
-            alert('Login successful');
-            // localstorage referred from w3schools
-            // URL: https://www.w3schools.com/jsref/prop_win_localstorage.asp
-            // Date Accessed: 07/25/20230
-            localStorage.setItem('user_info', JSON.stringify(data));
-            localStorage.setItem('isLoggedIn', true);
-            navigate('/');
-            window.location.reload();
-            return;
-          }
+    });        
     
-        } catch (error) {
-          return error;
-        }
-    }
-        
-    
-    // Validations
+    // Fprm Validations
     const isEmailValid = (email) => {
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         return emailPattern.test(email);
@@ -55,21 +28,11 @@ export default function Login() {
         const passwordPattern = /(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[a-z]+)(?=.*[0-9]+)(?=.*\W+).{8,}/ //RE from CSCI 2170!
         return passwordPattern.test(password);
     }
-    const isPasswordMatch = (password) => {
-        if (password === userPassword) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
     const formValidation = () => {
-        if (isEmailValid(userEmail) && isPasswordValid(userPassword)) {
+        if (isEmailValid(userEmail) && isPasswordValid(userPassword))
             return true
-        }
-        else {
+        else
             return false
-        }
     }
 
     // Form Interactions
@@ -98,12 +61,18 @@ export default function Login() {
         event.preventDefault();
         if(formValidation()) {
             const data  = await loginUser({ userEmail, userPassword });
-            console.log(data)
             if (data.response === undefined){
-                navigate("/login");
-            } 
+                alert('Login successful');
+                // localstorage referred from w3schools
+                // URL: https://www.w3schools.com/jsref/prop_win_localstorage.asp
+                localStorage.setItem('user_info', JSON.stringify(data));
+                localStorage.setItem('isLoggedIn', true);
+                navigate('/');
+                window.location.reload();
+                return;
+            }
             else {
-              alert(data.response.data.message);
+                alert(data)
             }
         }
     }

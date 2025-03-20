@@ -1,6 +1,6 @@
 # Star Nationals Official Website
 Created: 2024-MAR-24 \
-Updated: 2024-Nov-04 \
+Updated: 2025-Mar-20 \
 ~ \
 This is a ReatJS project of a pseudonym startup company called Star Nationals.
  This project incorporates various full stack functionalities such as login & registration and dynamic
@@ -15,7 +15,13 @@ The project is deployed and accessed here: https://starnationals-website.onrende
 # References
 - https://www.w3schools.com/react/react_forms.asp
 - https://stackoverflow.com/questions/58525269/jump-to-a-specific-section-in-a-page-react
-
+- https://medium.com/@ericapantojacs/react-registration-form-d298b3b7e75d
+- https://www.youtube.com/watch?v=jStzo0tlr6Y
+- https://www.w3schools.com/jsref/jsref_getfullyear.asp
+- https://stackoverflow.com/questions/58163980/input-type-checkbox-cant-style-proprerly
+- https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid
+- https://developer.mozilla.org/en-US/docs/Web/CSS/:valid
+- https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
 
 
 # Original README Below

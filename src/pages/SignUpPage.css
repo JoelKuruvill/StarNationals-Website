@@ -28,24 +28,63 @@ Created: 2024-MAY-3
     border-radius: 1%;
     z-index: 1;
 }
+
 #signUpPageUI div {
     margin: 1%;
 }
 
+/* Input Styling */
 #signUpPageUI input {
-    padding: 1%;
-    margin: 2px;
+    padding: 0.25%;
+    margin: 1%;
+    clear: both;
+}
+#signUpPageUI input:user-invalid {
+    border: 2px solid red;
+}
+#signUpPageUI input[type=checkbox] {
+    /*https://stackoverflow.com/questions/58163980/input-type-checkbox-cant-style-proprerly*/
+    transform: scale(1.25);
     clear: both;
 }
 
-/* input:invalid {
-    border: 0.15em solid red;
-} */
+#signUpPageUI h2 {
+    margin-bottom: 0;
+    line-height: 0;
+    padding-top: 0.75em;
+}
+
+#signUpPageUI p {
+    margin: 1em 1%;
+}
+
+#signUpPageUI i {
+    font-size: smaller;
+}
+
+.Checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.Checkboxes div {
+    box-shadow: 1px 1px 8px 1px whitesmoke;
+    width: 95%;
+    padding: 1.25%;
+}
+
+.Checkboxes div label {
+    width: 100%;
+}
 
 #signUpPageUI #submit {
     width: 50%;
 }
 
+/* Responsive Styling */
 @media screen and (max-width: 768px) {
     #signUpPageUI {
         width: 80%;

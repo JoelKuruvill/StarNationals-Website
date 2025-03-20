@@ -59,22 +59,13 @@ app.post(`/addUser`, async (req, res) => {
         email: req.body.userEmail,
         password: req.body.userPassword,
     };
-    const data = await db.registerUser(newUser);
+    console.log(newUser)
     try {
-        await client.connect();
-    
-        // calling the db and the collection
-        const db = client.db("User_Management");
-        const collection = db.collection("Signup");
-    
-        const addUser = await collection.insertOne(data);
-    
+        const data = await db.registerUser(newUser);
         res.status(200).json(data);
-        await client.close();
-        return addUser;
       } 
       catch (error) {
-        return error;
+        res.status(500).json(error);
       }
 });
 
@@ -84,7 +75,7 @@ app.post(`/login`, async (req, res) => {
         const validateUser = {
           email: req.body.userEmail,
         };
-    console.log(validateUser)
+
         const data = await db.loginUser(validateUser);
     
         if (!data) {

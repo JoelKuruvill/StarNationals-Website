@@ -48,6 +48,7 @@ async function loadJobs(idValue) {
   }
   return jobsList.toArray();
 }
+
 async function loadUsers(idValue) {
   const client = new MongoClient(mainURI);
   const database = client.db("userData");
@@ -94,7 +95,8 @@ const loginUser = async (data) => {
     await client.close();
 
     return user;
-  } catch (error) {
+  }
+  catch (error) {
     return error;
   }
 };
