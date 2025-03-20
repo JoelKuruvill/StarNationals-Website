@@ -13,6 +13,17 @@ export const CurrentYearAD = () => {
   return date.getFullYear();
 }
 
+/* JOB POSTINGS */
+export const loadJobPostings = async (id) => {
+  try {
+    const res = await axios.get(`${baseURL}/jobs`, id);
+    return res.data;
+  }
+  catch (error) {
+    return error;
+  }
+}
+
 /* REGISTRATION */
 export const createUser = async (data) => {
   try {

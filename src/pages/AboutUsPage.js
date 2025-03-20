@@ -3,10 +3,10 @@ About Us Page
 Created: 2024-APR-29
 */
 import { useState, useEffect } from 'react';
-import axios from "axios";
 
 // import mainImage from '../assets/Star Nationals Inc Official Logo 2016.png';
 import './AboutUsPage.css';
+import { loadJobPostings } from '../api';
 
 export default function AboutUs() {
     const [jobs, setJobs] = useState([]);
@@ -15,30 +15,21 @@ export default function AboutUs() {
 
     useEffect(() => {
         document.title = "About Star Nationals";
-        axios.get("/").then(() => {
-            axios.get('/jobs')
-                .then(response => {
-                    if (response.data.length > 0) {
-                        console.log("Data accessed");
-                        setJobsTableLoading(false);
-                        setJobs(response.data);
-                    } else {
-                        console.log("No data returned, no opennings?");
-                        setJobsTableLoading(false);
-                        setJobsTableMessage("UH OH:\nNo Job Opennings at this time. Check again later!");
-                    }
-                })
-                .catch(error => {
-                    console.log('Error fetching data: ', error);
-                    setJobsTableLoading(false);
-                    setJobsTableMessage("DB ERROR:\nError accessing database. Please try again later");
-                })
-        })
-            .catch((error) => {
-                console.log('Error fetching data: ', error);
+        
+        async function loadJobsTable() {
+            const data = await loadJobPostings();
+            if (data.length > 0) {
+                console.log("Data accessed");
                 setJobsTableLoading(false);
-                setJobsTableMessage("DB ERROR:\nError connecting to database. Please try again later");
-            })
+                setJobs(data);
+            }
+            else {
+                console.log("No data returned, no opennings?");
+                setJobsTableLoading(false);
+                setJobsTableMessage("UH OH:\nNo Job Opennings at this time. Check again later!");
+            }
+        }
+        loadJobsTable();
     }, []); //runs only once.
 
     return (
