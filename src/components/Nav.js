@@ -45,8 +45,8 @@ export function Nav() {
         </nav>
 
         <div className="user-auth">
-          <button type="button" className="btn btn-outline-primary me-2">
-            <Link to="/login" className="nav-link px-2" disabled>Profile</Link>
+          <button type="button" className="btn btn-outline-primary me-2" disabled>
+            <Link to="/login" className="nav-link px-2">Welcome {JSON.parse(localStorage.getItem('user_info'))['userName']}!</Link>
           </button>
           <button type="button" className="btn btn-primary">
             <Link to="/" className="nav-link px-2" onClick={signOut}>Sign Out</Link>

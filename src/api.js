@@ -4,6 +4,7 @@ Created: 2025-Mar-20
 */
 import axios from "axios";
 import bcrypt from "bcryptjs";
+import { v4 }  from "uuid";
 
 const baseURL = "http://localhost:3001";
 
@@ -27,13 +28,15 @@ export const loadJobPostings = async (id) => {
 /* REGISTRATION */
 export const createUser = async (data) => {
   try {
+    const id = v4(); //UUID generator.
     const hashedPassword = await bcrypt.hash(data.userPassword, 10);
 
     const requestData = {
       ...data,
-      userPassword: hashedPassword
+      userPassword: hashedPassword,
+      _id: id
     };
-
+    
     const res = await axios.post(`${baseURL}/addUser`, requestData);
     return res.data;
   } 

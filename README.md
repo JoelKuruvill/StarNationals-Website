@@ -8,7 +8,7 @@ This is a ReatJS project of a pseudonym startup company called Star Nationals.
 
 ----
 
-The project is deployed and accessed here: https://starnationals-website.onrender.com/
+The project is deployed and can be accessed here: https://starnationals-website.onrender.com/
 
 ----
 
@@ -22,6 +22,8 @@ The project is deployed and accessed here: https://starnationals-website.onrende
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:valid
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
+- https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/
+- https://www.w3schools.com/react/react_useeffect.asp
 
 
 # Original README Below

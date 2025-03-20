@@ -54,7 +54,7 @@ app.get(`/users`, async (req, res) => {
 });
 app.post(`/addUser`, async (req, res) => {
     const newUser = {
-        _id: req.body.userName,
+        _id: req.body._id,
         userName: req.body.userName,
         email: req.body.userEmail,
         password: req.body.userPassword,

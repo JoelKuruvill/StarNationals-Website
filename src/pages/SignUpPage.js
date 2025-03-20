@@ -19,7 +19,18 @@ export default function Register() {
 
     useEffect(() => {
         document.title = "Sign-Up | Star Nationals";
-    });
+
+        //Password Input Field's error response indicators:
+        if (isPasswordValid(userPassword))
+            document.getElementById("password").style.color = "Green";
+        else
+            document.getElementById("password").style.color = "Red";
+        
+        if (isPasswordMatch(userPasswordConfirm))
+            document.getElementById("confirmPassword").style.color = "Green";
+        else
+            document.getElementById("confirmPassword").style.color = "Red";
+    }, [userPassword, userPasswordConfirm]);
 
     // Form Validations
     const isEmailValid = (email) => {
@@ -61,25 +72,34 @@ export default function Register() {
     function handleInputPassword(event) {
         const passwordValue = event.target.value;
         setPassword(passwordValue);
-        
-        if (isPasswordValid(passwordValue)) {
-            document.getElementById("password").style.color = "Green";
-            document.getElementById("confirmPassword").style.color = "Green";
-        }
-        else {
-            document.getElementById("password").style.color = "Red";
-            document.getElementById("confirmPassword").style.color = "Red";
-        }
     }
     function handleInputPasswordConfirm(event) {
         const passwordConfirmValue = event.target.value;
         setPasswordConfirm(passwordConfirmValue);
-        if (isPasswordMatch(passwordConfirmValue)) {
-            document.getElementById("confirmPassword").style.color = "Green";
-        }
-        else {
-            document.getElementById("confirmPassword").style.color = "Red";
-        }
+    }
+    function showPassword() {
+        /* Modified code from https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/ */
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        
+        // toggle the icon
+        togglePassword.classList.toggle("bi-eye");
+    }
+    function showPasswordConfirm() {
+        /* Modified code from https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/ */
+        const togglePasswordConfirm = document.querySelector("#togglePasswordConfirm");
+        const confirmPassword = document.querySelector("#confirmPassword");
+
+        // toggle the type attribute
+        const type = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
+        confirmPassword.setAttribute("type", type);
+        
+        // toggle the icon
+        togglePasswordConfirm.classList.toggle("bi-eye");
     }
 
     //Form Submission
@@ -103,27 +123,29 @@ export default function Register() {
     }
 
     return (
-        <div id="signupPageBG">
+        <div id="signupPageBG"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
             <form id="signUpPageUI" onSubmit={handleSubmit}>
                 <h2>Sign Up Now!</h2> <br />
                 <div>
-                    <label for="userName"> Please provide your name, or create a a username: </label>
+                    <label for="userName"> Create your username: </label>
                     <input type="text" id="userName" name="userName" placeholder="Name / Username" onChange={handleInputUserName} value={userName} required></input>
                     <span className='text-danger'>*</span> <br/>
-                    <i> Such as your first name; i.e. John </i>
+                    <i> Example: John </i>
                 </div> <hr />
                 <div>
-                    <label for="email"> Please provide your email address: </label>
+                    <label for="email"> Email address: </label>
                     <input type="email" id="email" name="email" placeholder="Email" onChange={handleInputUserEmail} value={userEmail} required></input>
                     <span className='text-danger'>*</span><br />
-                    <i> Email should match similar to yourName@email.com </i>
+                    <i> Example: yourName@email.com </i>
                 </div> <hr />
                 <div>
-                    <label for="password"> Please create a password. Remeber to remeber it! </label> <br />
+                    <label for="password"> Create your password. Remeber to remeber it! </label><br />
                     <input type="password" id="password" name="password-field" placeholder="Password" onChange={handleInputPassword} value={userPassword} required></input>
+                    <i class="bi bi-eye-slash" id="togglePassword" onClick={showPassword}></i>
                     <span className='text-danger'>*</span><br />
-                    <input type="password" id="confirmPassword" name="password-field" placeholder="Re-Enter Password" onChange={handleInputPasswordConfirm} value={userPasswordConfirm} required></input>
-                    <span className='text-danger'>*</span> <br />
+                    <input type="password" id="confirmPassword" name="password-field" placeholder="Re-Confirm Password" onChange={handleInputPasswordConfirm} value={userPasswordConfirm} required></input>
+                    <i class="bi bi-eye-slash" id="togglePasswordConfirm" onClick={showPasswordConfirm}></i>
+                    <span className='text-danger'>*</span><br />
                     <i> Passwords should be at minimum 8 characters long, with one upper case ('A'), one lowercase ('a'), a number ('1'), and a special character ('#'). </i>
                 </div> <hr />
                 <div>
@@ -132,11 +154,11 @@ export default function Register() {
                     <div className="Checkboxes">
                         <div>
                             <label for="isProject"> You recognize this is a personal project website and not a real company <span className='text-danger'>*</span></label>
-                            <input type="checkbox" id="isProject" name="isProject-field" required></input><br />
+                            <input type="checkbox" id="isProject" name="isProject-field" required></input>
                         </div>
                         <div>
                             <label for="privacyTOS_A"> The information provided will be sent once submitted. <span className='text-danger'   >*</span></label>
-                            <input type="checkbox" id="privacyTOS_A" name="privacyTOS_A-field" required></input><br />
+                            <input type="checkbox" id="privacyTOS_A" name="privacyTOS_A-field" required></input>
                         </div>
                         <div>
                             <label for="privacyTOS_B"> The information provided will be retained and deleted after some time. <span className='text-danger'>*</span></label>
