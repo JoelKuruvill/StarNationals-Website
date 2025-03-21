@@ -33,21 +33,6 @@ Created: 2024-MAY-3
     margin: 1%;
 }
 
-/* Input Styling */
-#signUpPageUI input {
-    padding: 0.25%;
-    margin: 1%;
-    clear: both;
-}
-#signUpPageUI input:user-invalid {
-    border: 2px solid red;
-}
-#signUpPageUI input[type=checkbox] {
-    /*https://stackoverflow.com/questions/58163980/input-type-checkbox-cant-style-proprerly*/
-    transform: scale(1.25);
-    clear: both;
-}
-
 #signUpPageUI h2 {
     margin-bottom: 0;
     line-height: 0;
@@ -84,9 +69,28 @@ Created: 2024-MAY-3
     width: 50%;
 }
 
-form i {
-    margin-left: -30px;
+/* Input Styling */
+#signUpPageUI input {
+    padding: 0.25% 0.5%;
+    margin: 1%;
+    clear: both;
+}
+#signUpPageUI input:user-invalid {
+    border: 3px solid red;
+}
+#signUpPageUI input[type=checkbox] {
+    /*https://stackoverflow.com/questions/58163980/input-type-checkbox-cant-style-proprerly*/
+    transform: scale(1.25);
+    clear: both;
+}
+
+.passwordVisibility {
+    margin: 10px 3% 1em -30px;
     cursor: pointer;
+}
+.passwordVisibility:hover {
+    color: black;
+    background-color: wheat;
 }
 
 /* Responsive Styling */

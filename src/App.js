@@ -11,6 +11,7 @@ import Login from './pages/LoginPage';
 import Projects from './pages/ProjectsPage';
 import ErrorPage from './pages/ErrorsPage';
 import Register from './pages/SignUpPage';
+import Profile from './pages/UserProfilePage'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer></Footer>

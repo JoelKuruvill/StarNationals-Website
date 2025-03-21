@@ -19,7 +19,7 @@ export default function AboutUs() {
         async function loadJobsTable() {
             const data = await loadJobPostings();
             if (data.length > 0) {
-                console.log("Data accessed");
+                console.log("Data accessed", data);
                 setJobsTableLoading(false);
                 setJobs(data);
             }
@@ -81,7 +81,7 @@ export default function AboutUs() {
                         </tr>
                     </thead>
                     <tbody>
-                        {console.log(jobs + " | " + jobsTableMessage)}
+                        {console.log(jobs)}
                         {jobsTableLoading ? <tr>TABLE CONTENTS CONNECTING AND LOADING</tr> : false}
                         {jobsTableMessage.includes("DB ERROR" || "UH OH") ? <tr>{jobsTableMessage}</tr> : (Array.isArray(jobs) &&
                          jobs.length > 0) ?

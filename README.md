@@ -9,6 +9,7 @@ This is a ReatJS project of a pseudonym startup company called Star Nationals.
 ----
 
 The project is deployed and can be accessed here: https://starnationals-website.onrender.com/
+Backend Deployment: https://starnationals-website-api.onrender.com
 
 ----
 

@@ -108,18 +108,28 @@ export default function Register() {
         if (formValidation()) {
             document.getElementById("submit").disabled = true;
             const data = await createUser({ userName, userEmail, userPassword });
-
             if (data.response === undefined) {
-                navigate("/login");
-                window.location.reload();
+                alert("Registration Completed Successfully! Please login now with your new account!!")
+                registrationCompletionProtocol();
                 return;
-            }
-            else {
-                alert(data.response.data.message);
             }
         }
         else {
+            if (!isPasswordValid(userPassword))
+                alert("Password Is not valid, please ensure it matches requires outlined.")
+            else if (!isPasswordMatch(userPasswordConfirm))
+                alert("Passwords do not match, please ensure that passwords provided are same.")
+            else if (!isEmailValid(userEmail))
+                alert("Email provided is not correctly provided. Please ensure it is provided as needed.")
+            else {
+                alert("Error processing registration, please try again later!")
+            }
+
         }
+    }
+    function registrationCompletionProtocol() {
+        navigate("/login");
+        window.location.reload();
     }
 
     return (
@@ -139,13 +149,17 @@ export default function Register() {
                     <i> Example: yourName@email.com </i>
                 </div> <hr />
                 <div>
-                    <label for="password"> Create your password. Remeber to remeber it! </label><br />
-                    <input type="password" id="password" name="password-field" placeholder="Password" onChange={handleInputPassword} value={userPassword} required></input>
-                    <i class="bi bi-eye-slash" id="togglePassword" onClick={showPassword}></i>
-                    <span className='text-danger'>*</span><br />
-                    <input type="password" id="confirmPassword" name="password-field" placeholder="Re-Confirm Password" onChange={handleInputPasswordConfirm} value={userPasswordConfirm} required></input>
-                    <i class="bi bi-eye-slash" id="togglePasswordConfirm" onClick={showPasswordConfirm}></i>
-                    <span className='text-danger'>*</span><br />
+                    <label for="passwordInputs"> Create your password. Remeber to remeber it! </label><br />
+                    <div id='passwordInputs'>
+                        <input type="password" id="password" name="password-field" placeholder="Password" onChange={handleInputPassword} value={userPassword} required></input>
+                        <i class="passwordVisibility bi bi-eye-slash" id="togglePassword" onClick={showPassword}></i>
+                        <label for="password"><span className='text-danger'>*</span></label>
+                        <br />
+                        <input type="password" id="confirmPassword" name="password-field" placeholder="Re-Confirm Password" onChange={handleInputPasswordConfirm} value={userPasswordConfirm} required></input>
+                        <i class="passwordVisibility bi bi-eye-slash" id="togglePasswordConfirm" onClick={showPasswordConfirm}></i>
+                        <label for="confirmPassword"><span className='text-danger'>*</span></label>
+                    </div>
+                    
                     <i> Passwords should be at minimum 8 characters long, with one upper case ('A'), one lowercase ('a'), a number ('1'), and a special character ('#'). </i>
                 </div> <hr />
                 <div>
