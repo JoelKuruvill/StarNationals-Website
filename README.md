@@ -1,6 +1,6 @@
 # Star Nationals Official Website
 Created: 2024-MAR-24 \
-Updated: 2025-Mar-20 \
+Updated: 2025-Mar-21 \
 ~ \
 This is a ReatJS project of a pseudonym startup company called Star Nationals.
  This project incorporates various full stack functionalities such as login & registration and dynamic
@@ -8,8 +8,8 @@ This is a ReatJS project of a pseudonym startup company called Star Nationals.
 
 ----
 
-The project is deployed and can be accessed here: https://starnationals-website.onrender.com/
-Backend Deployment: https://starnationals-website-api.onrender.com
+The project is deployed and can be accessed here: https://starnationals-website.onrender.com/ \
+The backend deployment can be accessed here: https://starnationals-website-api.onrender.com/ \
 
 ----
 
@@ -25,6 +25,7 @@ Backend Deployment: https://starnationals-website-api.onrender.com
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
 - https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/
 - https://www.w3schools.com/react/react_useeffect.asp
+- https://www.npmjs.com/package/react-countdown
 
 
 # Original README Below

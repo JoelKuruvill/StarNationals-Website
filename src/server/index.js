@@ -7,6 +7,7 @@ Created: 2024-May-7
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import bcrypt from "bcryptjs";
 
 import db from "./model/database.js";
 
@@ -75,23 +76,23 @@ app.post(`/login`, async (req, res) => {
         const validateUser = {
           email: req.body.userEmail,
         };
-
         const data = await db.loginUser(validateUser);
     
         if (!data) {
           res.status(400).json({ message: "User not found" });
           return;
         }
+
+        const isPasswordValid = await bcrypt.compare(req.body.userPassword, data.password);
     
-        // const isPasswordValid = await bcrypt.compare(req.body.password, data.password);
-    
-        // if (!isPasswordValid) {
-        //   res.status(401).json({ message: "Invalid Password" });
-        //   return;
-        // }
+        if (!isPasswordValid) {
+          res.status(401).json({ message: "Invalid Password" });
+          return;
+        }
     
         res.status(200).json(data);
-      } catch (error) {
+      } 
+      catch (error) {
         res.status(500).json(error);
       }
 });

@@ -7,7 +7,7 @@ Photo by <a href="https://unsplash.com/@kellysikkema?utm_content=creditCopyText&
 import "./LoginPage.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { loginUser } from '../api.js'
+import { loginUser } from '../api.js';
 
 export default function Login() {
     const [userEmail, setEmail] = useState("");
@@ -39,30 +39,27 @@ export default function Login() {
     function handleInputUserEmail(event) {
         const emailValue = event.target.value;
         setEmail(emailValue);
-        if (isEmailValid(emailValue)) {
+        if (isEmailValid(emailValue))
             document.getElementById("email").style.color = "Green"
-        }
-        else {
+        else
             document.getElementById("email").style.color = "Red"
-        }
     }
     function handleInputUserPassword(event) {
         const passwordValue = event.target.value;
         setPassword(passwordValue);
-        if (isPasswordValid(passwordValue)) {
+        if (isPasswordValid(passwordValue))
             document.getElementById("password").style.color = "Green"
-        }
-        else {
+        else
             document.getElementById("password").style.color = "Red"
-        }
     }
     
     async function handleSubmit(event){
         event.preventDefault();
         if(formValidation()) {
             const data  = await loginUser({ userEmail, userPassword });
+
             if (data.response === undefined){
-                alert('Login successful');
+                alert('Login successful!');
                 // localstorage referred from w3schools
                 // URL: https://www.w3schools.com/jsref/prop_win_localstorage.asp
                 localStorage.setItem('user_info', JSON.stringify(data));
@@ -72,7 +69,7 @@ export default function Login() {
                 return;
             }
             else {
-                alert(data)
+                alert('Invalid Login: ' + JSON.stringify(data.response.data.message));
             }
         }
     }

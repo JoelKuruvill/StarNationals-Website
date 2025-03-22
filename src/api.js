@@ -30,11 +30,13 @@ export const createUser = async (data) => {
   try {
     const id = v4(); //UUID generator.
     const hashedPassword = await bcrypt.hash(data.userPassword, 10);
+    const createdDate = new Date(); 
 
     const requestData = {
       ...data,
       userPassword: hashedPassword,
-      _id: id
+      _id: id,
+      account_created_date: createdDate.getDay() + " " + createdDate.getDate() + " " + createdDate.getFullYear(),
     };
     
     const res = await axios.post(`${baseURL}/addUser`, requestData);
@@ -50,7 +52,7 @@ export const loginUser = async (data) => {
   try {
     const res = await axios.post(`${baseURL}/login`, data);
     return res.data;
-  } 
+  }
   catch (error) {
     return error;
   }
