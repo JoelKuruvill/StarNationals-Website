@@ -60,7 +60,7 @@ app.post(`/addUser`, async (req, res) => {
         email: req.body.userEmail,
         password: req.body.userPassword,
     };
-    console.log(newUser)
+    // console.log(newUser)
     try {
         const data = await db.registerUser(newUser);
         res.status(200).json(data);

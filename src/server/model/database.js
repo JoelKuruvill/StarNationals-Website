@@ -91,7 +91,6 @@ const loginUser = async (data) => {
     const collection = db.collection("userData_Credentials");
 
     const user = await collection.findOne(data);
-    console.log(user)
     await client.close();
 
     return user;

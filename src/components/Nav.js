@@ -3,21 +3,23 @@ Navigation Bar Component
 Created: 2024-APR-29
 */
 import logo from '../assets/Star Nationals Inc Logo 2016.jpg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import './Nav.css';
 
-function signOut () {
-  try {
-    localStorage.clear();
-    window.location.reload();
-    alert("Successfully Logged Out!");
-  } 
-  catch (error) {
-    alert("Error Logging Out: ", error);
-  }
-}
-
 export function Nav() {
+  const navigate = useNavigate();
+  
+  function signOut () {
+    try {
+      localStorage.clear();
+      navigate("/");
+      alert("Successfully Logged Out!");
+    } 
+    catch (error) {
+      alert("Error Logging Out: ", error);
+    }
+  }
+
   if (localStorage.getItem("isLoggedIn")) {
     return (
       <header className="App-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 m-3 border-bottom">
